@@ -124,8 +124,6 @@ export type MarqueeProps = {
   children?: ReactNode;
 } & RefAttributes<HTMLDivElement>;
 
-
-
 const Marquee: FC<MarqueeProps> = forwardRef(function Marquee(
   {
     style = {},
@@ -285,6 +283,7 @@ const Marquee: FC<MarqueeProps> = forwardRef(function Marquee(
     [direction]
   );
 
+  console.log('aaaaaaa');
   // Render {multiplier} number of children
   const multiplyChildren = useCallback(
     (multiplier: number) => {
@@ -340,4 +339,4 @@ const Marquee: FC<MarqueeProps> = forwardRef(function Marquee(
 
 export default Marquee;
 
-register(Marquee, 'x-marquee', [], { shadow: false });
+register(Marquee, 'x-marquee', ['play'], { shadow: false });

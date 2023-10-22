@@ -1,8 +1,10 @@
+import register from 'preact-custom-element';
 import './app.css';
 import Marquee, { MarqueeProps } from './components/Carousel';
 
 // type CustomEvents<K extends string> = { [key in K] : (event: CustomEvent) => void };
 // type CustomElement<T, K extends string = ''> = Partial<T & { children: any } & CustomEvents<`on${K}`>>;
+register(Marquee, 'x-marquee', [], { shadow: false });
 
 declare global {
   namespace preact.createElement.JSX {
@@ -13,6 +15,7 @@ declare global {
     }
   }
 }
+
 export function App() {
   return (
     <x-marquee>
